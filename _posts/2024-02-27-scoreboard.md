@@ -79,19 +79,28 @@ async function sort() {
         tableFill(sortedDB);
     } catch (error) {
         console.error('Failed to fetch leaderboard data:', error);
+        // Even if fetching fails, fill the table with the static entry
+        tableFill([{ name: "Rayane", tokens: 10, rank: "Beginner" }]); // Assuming rank is part of your data model
     }
 }
 
 function tableFill(db) {
     const tbody = document.getElementById('tbody');
+    // Clear existing entries
+    tbody.innerHTML = '';
+    // Add a static entry for Rayane at the beginning
+    const staticEntry = { name: "Rayane", tokens: 10, rank: "Beginner" }; // Add this to simulate a static entry
+    db.unshift(staticEntry); // Add the static entry to the start of the array
     db.forEach((player, index) => {
         let tr = document.createElement('tr');
-        tr.innerHTML = `<td>${index + 1}</td><td>${player.name}</td><td>${player.tokens}</td>`;
+        tr.innerHTML = `<td>${player.rank || index + 1}</td><td>${player.name}</td><td>${player.tokens}</td>`; // Adjusted to include rank
         tbody.appendChild(tr);
     });
 }
 
 document.addEventListener('DOMContentLoaded', sort);
 </script>
+
 </body>
 </html>
+

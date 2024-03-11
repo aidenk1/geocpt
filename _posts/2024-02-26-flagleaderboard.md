@@ -79,7 +79,6 @@ permalink: /flagleaderboard
                     <td>aiden</td>
                     <td>2</td>
                 </tr>
-                </tr>
             </tbody>
         </table>
     </div>

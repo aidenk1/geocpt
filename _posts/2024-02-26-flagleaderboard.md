@@ -77,7 +77,7 @@ permalink: /flagleaderboard
                 <tr>
                     <td>2</td>
                     <td>aiden</td>
-                    <td></td>
+                    <td>2</td>
                 </tr>
                 </tr>
             </tbody>
